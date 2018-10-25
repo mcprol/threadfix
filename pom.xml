@@ -79,19 +79,11 @@
     <!-- Add local repository at /lib so that projects can share jetbrains annotations -->
     <repositories>
         <repository>
-            <id>lib</id>
-            <name>lib</name>
-            <releases>
-                <enabled>true</enabled>
-                <checksumPolicy>ignore</checksumPolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <checksumPolicy>ignore</checksumPolicy>
-            </snapshots>
-            <!-- this will be resolved by the internal poms so they need to look up one level.-->
-            <url>file://${project.basedir}${file.separator}..${file.separator}lib</url>
+			<id>in-project</id>
+      		<name>In Project Repo</name>
+            <url>file://${project.basedir}/../lib</url>
         </repository>
+        
         <repository>
             <id>jboss-public-repository-group</id>
             <name>JBoss Public Repository Group</name>
@@ -273,6 +265,8 @@
     </profiles>
 
     <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <db.name>stonemill</db.name>
 
         <!-- Framework dependency versions -->
@@ -297,7 +291,7 @@
         <commons.lang.version>3.3.2</commons.lang.version>
         <commons.logging.version>1.2</commons.logging.version>
         <commons.validator.version>1.4.1</commons.validator.version>
-        <esapi.version>2.1.0-SNAPSHOT</esapi.version>
+        <esapi.version>2.1.0</esapi.version>
         <hibernate.version>3.6.10.Final</hibernate.version>
         <hibernate-validator.version>5.1.3.Final</hibernate-validator.version>
         <itext.version>5.5.8</itext.version>
